@@ -21,7 +21,9 @@
       <p v-if="messageshow">V-IF Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
       <p v-else="messageshow">V-ELSE Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
 
-
+      <h2 v-bind:title="title">{{message2}}</h2>
+      <img v-bind:src="url" v-bind:alt="title">
+      <img :src="url" :alt="title">
 
     </div>
 
@@ -35,6 +37,10 @@
           messagetext: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
           messagehtml: 'Lorem ipsum dolor sit amet <small>sub heading</small>',
           messageshow: false,
+
+          message2: 'Show title attributes on hover',
+          title: 'you have loaded page on ' + new Date(),
+          url: 'img/logo.png'
         }
       })
     </script>
