@@ -25,6 +25,11 @@
       <img v-bind:src="url" v-bind:alt="title">
       <img :src="url" :alt="title">
 
+      <ul>
+        <li v-for="todo in todos">{{todo.id}} - {{todo.text}}</li>
+      </ul>
+      <ul><li v-for="count in count">Item #{{count}}</li></ul>
+
     </div>
 
 
@@ -40,7 +45,15 @@
 
           message2: 'Show title attributes on hover',
           title: 'you have loaded page on ' + new Date(),
-          url: 'img/logo.png'
+          url: 'img/logo.png',
+
+          todos: [
+            { text: 'Learn Vue.js', id: 2 },
+            { text: 'Learn React', id: 3 },
+            { text: 'Learn Angular', id: 4 },
+            { text: 'Learn TypeScript', id: 6 }
+          ],
+          count: 10
         }
       })
     </script>
