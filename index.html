@@ -30,6 +30,9 @@
       </ul>
       <ul><li v-for="count in count">Item #{{count}}</li></ul>
 
+      <p>{{inputval}}</p>
+      <input type="text" v-model="inputval">
+
     </div>
 
 
@@ -53,7 +56,10 @@
             { text: 'Learn Angular', id: 4 },
             { text: 'Learn TypeScript', id: 6 }
           ],
-          count: 10
+          count: 10,
+
+          inputval: 'Input box Message',
+
         }
       })
     </script>

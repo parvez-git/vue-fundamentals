@@ -13,9 +13,15 @@ v-cloak
 
 ### Tutorial-4
 v-bind:title
+
 :title
+
 v-bind:src
+
 :src
 
 ### Tutorial-5
 v-for
+
+### Tutorial-6
+v-model
