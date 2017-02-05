@@ -33,6 +33,14 @@
       <p>{{inputval}}</p>
       <input type="text" v-model="inputval">
 
+      <h3>Count: {{count}}</h3>
+      <button class="btn btn-success" v-on:click="countUp">Count Up</button>
+      <button class="btn btn-danger" v-on:click="countDown">Count Down</button>
+
+      <h5><a :href="webUrl">Visit: {{cleanUrl}}</a></h5>
+      <input type="text" v-model="webUrl">
+      <button class="btn btn-default" @click="humanizeUrl">Humanize Me!</button>
+
     </div>
 
 
@@ -60,7 +68,22 @@
 
           inputval: 'Input box Message',
 
+          webUrl: "",
+          cleanUrl: ""
+        },
+
+        methods: {
+          countUp: function(){
+            this.count += 1
+          },
+          countDown: function(){
+            this.count -= 1
+          },
+          humanizeUrl: function(){
+            this.cleanUrl = this.webUrl.replace(/^https?:\/\//,'').replace(/\/$/,'')
+          }
         }
+
       })
     </script>
   </body>

@@ -2,9 +2,13 @@
 
 ### Tutorial-3
 v-text
+
 v-html
+
 v-show
+
 v-if
+
 v-else
 
 v-pre
@@ -25,3 +29,10 @@ v-for
 
 ### Tutorial-6
 v-model
+
+### Tutorial-7
+v-on:click
+
+@click
+
+:href
