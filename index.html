@@ -11,6 +11,8 @@
 
   </head>
   <body>
+  <div class="container">
+
     <div id="app">
 
       <h1>{{message}}</h1>
@@ -41,7 +43,23 @@
       <input type="text" v-model="webUrl">
       <button class="btn btn-default" @click="humanizeUrl">Humanize Me!</button>
 
+      <hr>
+      <h4>Hello, {{fullname}}</h4> <p>
+      <span>First Name: {{fname}}</span> <br>
+      <span>Last Name: {{lname}}</span> </p>
+      <p>
+      <span>First Name: <input type="text" v-model="fname"></span>
+      <span>Last Name: <input type="text" v-model="lname"></span> </p>
+      <hr>
+
+      <h3>You are {{label}}</h3>
+      <h4>Your point: {{countPoint}}</h4> <p>
+      <button type="button" class="btn btn-success" @click="addPoint">Add Point</button>
+      <button type="button" class="btn btn-danger" @click="decreasePoint">Decrease Point</button> </p>
+
+
     </div>
+  </div>
 
 
     <script src="https://unpkg.com/vue@2.1.10/dist/vue.js"></script>
@@ -69,7 +87,13 @@
           inputval: 'Input box Message',
 
           webUrl: "",
-          cleanUrl: ""
+          cleanUrl: "",
+
+          fname: '',
+          lname: '',
+
+          countPoint: 0,
+
         },
 
         methods: {
@@ -79,8 +103,34 @@
           countDown: function(){
             this.count -= 1
           },
+
           humanizeUrl: function(){
             this.cleanUrl = this.webUrl.replace(/^https?:\/\//,'').replace(/\/$/,'')
+          },
+
+          addPoint: function(){
+            this.countPoint += 10
+          },
+          decreasePoint: function(){
+            this.countPoint -= 10
+          }
+        },
+
+        computed: {
+          fullname: function() {
+            return this.fname +" "+ this.lname
+          },
+
+          label: function(){
+            if (this.countPoint >= 200) {
+              return "Pro"
+            } else if (this.countPoint >= 100) {
+              return "Intermediate"
+            }else if (this.countPoint >= 0) {
+              return "Beginner"
+            }else{
+              return "Banned"
+            }
           }
         }
 

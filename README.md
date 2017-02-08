@@ -36,3 +36,8 @@ v-on:click
 @click
 
 :href
+
+### Tutorial-8
+computed: {
+  
+}
